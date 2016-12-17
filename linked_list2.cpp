@@ -31,8 +31,18 @@ public:
         return ret;
         
     }
+    
+    int display(){
+    	node = head;
+    	while(node!=NULL)
+    	{
+      	  cout << node->x << " ";
+      	  node=node ->next;
+  	    }
+    }
+
 private:
-    Node *head; 
+    Node *head,*node; 
 };
 
 int main() {
@@ -41,12 +51,12 @@ int main() {
     
 	while (1){
 	system ("cls");
-	
 	cout << "Menu" << endl
 		 << "==================" << endl
 		 <<"[1] Insert into Linked list" << endl
 		 <<"[2] Pop" << endl
 		 <<"[3] Exit" << endl
+		 <<"[4] Display" << endl
 		 << "==================" << endl
 		 <<"Choice: ";
 	cin >> choice; 
@@ -59,24 +69,20 @@ int main() {
 			list.addValue(num);
 			nPush++;
 			break;
-			
 		case 2:
-			if(nPush==0)
-			{
-				cout << "Empty";
-			}
-			else{
-			cout << list.popValue();
+			list.popValue();
 			nPush--;
-			}
-			getch();
 			break;
-			
 		case 3:
-			exit(1);		
-			
+			exit(1);
+		case 4:
+			list.display();
+			getch();
 		default:break;
-	}		 
+		
+	}	 
+		 
 }
+    
     return 0;
 }

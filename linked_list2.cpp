@@ -76,10 +76,7 @@ int main() {
 			exit(1);		
 			
 		default:break;
-		
-	}	 
-		 
+	}		 
 }
-    
     return 0;
 }

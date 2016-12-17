@@ -37,7 +37,7 @@ public:
     	while(node!=NULL)
     	{
       	  cout << node->x << " ";
-      	  node=node ->next;
+      	  node=node->next;
   	    }
     }
 
@@ -70,8 +70,15 @@ int main() {
 			nPush++;
 			break;
 		case 2:
-			list.popValue();
+			if (nPush==0)
+			{
+				cout << "Empty!";
+			}
+			else{
+			cout<<list.popValue();
 			nPush--;
+			}
+			getch();
 			break;
 		case 3:
 			exit(1);

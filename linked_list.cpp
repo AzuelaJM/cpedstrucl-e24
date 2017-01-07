@@ -128,10 +128,37 @@ void display(struct node * r) {
   printf("\n");
 }
 
+int deleteall(int num) {
+  struct node * temp, * prev;
+  temp = head;
+  while (temp != NULL) {
+    if (temp -> data == num) {
+      if (temp == head) {
+        head = temp -> next;
+        free(temp);
+        temp=prev->next;
+      } else {
+        prev -> next = temp -> next;
+        free(temp);
+        temp=prev->next;
+      }
+    } else {
+      prev = temp;
+      temp = temp -> next;
+    }
+  }
+  return 0;
+}
+
 int main() {
   int i, num;
   struct node * n;
   head = NULL;
+  insert(1);
+  insert(4);
+  insert(3);
+  insert(4);
+  insert(4);
   while (1) {
     printf("Linked List Operations\n");
     printf("===============\n");
@@ -141,6 +168,9 @@ int main() {
     printf("4.Delete\n");
     printf("5.Search\n");
     printf("6.Exit\n");
+    printf("7.Add after\n");
+    printf("8.Add before\n");
+    printf("9.Delete all\n");
     printf("Enter your choice : ");
     if (scanf("%d", & i) <= 0) {
       printf("Enter only an Integer\n");
@@ -183,6 +213,27 @@ int main() {
         break;
       case 6:
       	return 0;
+      case 7:
+      	printf("Enter number to add and location:\n");
+      	printf("Number: ");
+      	scanf("%d",&num);
+      	printf("Location: ");
+      	scanf("%d",&i);
+      	addafter(num,i+1);
+      	break;
+      case 8:
+      	printf("Enter number to add and location:\n");
+      	printf("Number: ");
+      	scanf("%d",&num);
+      	printf("Location: ");
+      	scanf("%d",&i);
+      	addafter(num,i);
+      	break;
+	  case 9:	  	
+	  printf("Enter number to delete: ");
+	  scanf("%d",&num);
+	  deleteall(num);
+	  break;
       default:
         printf("Invalid option\n");
       }

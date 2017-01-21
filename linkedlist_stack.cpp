@@ -29,15 +29,15 @@ struct Node{
 		if (top!=NULL){
 			temp=top;
 			top=top->back;
-			cout << temp->data << " Dequeued";
+			cout << temp->data << " popped";
 			delete temp;
 		}
 		else
-		cout <<"Queue is empty";
+		cout <<"Stack is empty";
 	}
 	int display(){
 		if (top==NULL){
-		cout << "\nQueue is empty ";
+		cout << "\nStack is empty ";
 		return 0;
 		}
 		q=top;
@@ -46,7 +46,6 @@ struct Node{
 			q=q->back;
 		}
 	}
-	
 };
 int main(){
 	samteng noding;

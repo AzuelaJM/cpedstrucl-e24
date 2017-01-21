@@ -12,18 +12,15 @@ struct Node{
 }*q,*top=NULL,*bottom=NULL,*temp;
 	public:
 	int push(int n){
+		q=new Node;
+		q->data=n;
+		q->next=NULL;
 		if (top==NULL){
-				q=new Node;
-				q->data=n;
-				q->next=NULL;
 				q->back=NULL;
 				top=q;
 				bottom=q;
 				return 0;
 			}
-		q=new Node;
-		q->data=n;
-		q->next=NULL;
 		q->back=top;
 		top->next=q;
 		top=q;

@@ -9,7 +9,7 @@ struct Node{
 	int data;
 	Node *next;
 	Node *back;
-}*q,*top=NULL,*bottom=NULL,*temp,*prev,*curr;
+}*q,*top=NULL,*bottom=NULL,*temp;
 	public:
 	int push(int n){
 		if (top==NULL){

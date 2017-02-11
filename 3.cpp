@@ -68,4 +68,5 @@ int main(int argc, char **argv){
 	cout << "post order \n";
 	printTreePostOrder(root);
 	cout << endl;
+	return 0;
 }

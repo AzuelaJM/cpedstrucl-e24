@@ -50,7 +50,7 @@ void printTreePostOrder(struct Tree *node){
 	cout << node->data << " ";
 }
 
-int main(int argc, char **argv){
+int main(){
 	Tree *root = newTreeNode('F');
 	insertTreeNode(root,'B');
 	insertTreeNode(root,'A');

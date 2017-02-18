@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 int main(){
 	int A[] = {35,10,55,20,5};
 	int n=5;
@@ -18,8 +17,3 @@ int main(){
 		cout << endl;
 	}	
 }
-
-
-
-
-

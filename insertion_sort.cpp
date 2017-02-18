@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
 	int A[] = {30,20,40,50,10};
-	int n=5,i,j;
+	int n=5,i,j,m=0;
 	
 	for (int k=0;k<n;k++)
 		cout << A[k] << " ";
@@ -11,6 +11,8 @@ int main(){
 	
 	for (i=1;i<n;i++){
 		int tmp=A[i];
+		m++;
+		cout << "Pass " << m << endl;
 		for (j=i-1;j>=0 &&tmp<A[j];j--){
 			A[j+1]=A[j];
 		}
@@ -18,6 +20,6 @@ int main(){
 		A[j+1] = tmp;
 		for (int k=0;k<n;k++)
 			cout << A[k] << " ";
-		cout << endl;
+		cout << endl<< endl;
 	}
 }
